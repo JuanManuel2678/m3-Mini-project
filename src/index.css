@@ -2,4 +2,54 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif
+}
+.NavBar {
+  border: solid 2px black;
+  height: 86px;
+  padding: 30px;
+}
+.Card_list {
+  grid-auto-rows: max-content;
+  margin: 0 auto;
+}
+.Card {
+  display: flex;
+  flex-direction:column ;
+  width: 400px;
+  gap: 4px;
+  float: left;
+  margin: 10px 10px 30px 10px;
+}
+
+.img_container > img {
+  width: 395px;
+  height: 269px;
+  border-radius: 24px;
+}
+.data_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  align-items: center;
+}
+
+.h5-1 {
+ font-size: 14px;
+ color: #828282;
+}
+
+.h5-2 {
+  font-size: 14px;
+  color: #4f4f4f;
+  align-items: center;
+}
+.data_container .h5-2 img {
+  width: 24px;
+  height: 24px;
+}
+.Card > h2 {
+  font-size: 16px;
+  text-align: left;
+  color: #333333;
 }
