@@ -8,7 +8,18 @@
   border: solid 2px black;
   height: 86px;
   padding: 30px;
+  display: flex;
+  justify-content: space-between;
 }
+.NavBar figure img {
+  cursor: pointer;
+}
+.main-container {
+  display: flex;
+  padding: 70px 100px 20px 110px;
+  border: 2px solid purple;
+}
+
 .Card_list {
   grid-auto-rows: max-content;
   margin: 0 auto;

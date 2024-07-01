@@ -1,9 +1,12 @@
 
-export default function CardList({children}) {
+export default function CardList({ children }) {
 
     return (
-        <ul className="Card_list">
+        <main className="main-container">
+            <ul className="Card_list">
             {children}
-        </ul>
+            </ul>
+            
+        </main>
     )
 }

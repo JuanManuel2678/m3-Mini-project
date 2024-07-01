@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Nav } from "./components/Nav";
 import CardList from "./components/CardList";
 import Card from "./components/Card";
+import searchLogo from '/public/image/search.svg'
 
 
 function App() {
@@ -46,17 +47,24 @@ function App() {
     <Nav> 
     <div className="search_container">
     <input
+      id="location"
       type="text"
-      placeholder="Search caracter"
-      value={search.name}
-      onChange={(e) => setSearch({ ...search, name: e.target.value })}
+      placeholder="Add location"
+      value={search.fullLocation}
+      // onClick={hanleLocationInputClick}
+      onChange={(e) => setSearch({ ...search, fullLocation: e.target.value })}
     />
-    <select onChange={()=>setSearch()}>
-      <option value="">Slect Gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-    </select>
-    <button onClick={search_character}>Search</button>
+    <input 
+      id="guest"
+      type="text"
+      placeholder="Add Guests"
+      value={search.guests > 0 ? `${search.guests} guests` : '' }
+      // onClick={handleGuestsInputclic}
+      readOnly>
+    </input>
+    <button>
+      <img src={searchLogo} alt="" />
+    </button>
   </div>
    </Nav>
     <CardList>

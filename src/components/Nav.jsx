@@ -1,4 +1,3 @@
-import { Search } from './Search'
 import logo from '/image/logo.svg'
 
 export const Nav = ({children}) => {
