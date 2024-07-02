@@ -3,7 +3,14 @@ import { useEffect, useState } from "react";
 
 export const useData = () => {
     const [data, setData] = useState([])
-    const [search, setSearch] = useState({ name: "" });
+    const [filterData, setFilterData] = useState([]);
+    const [search, setSearch] = useState({ city: '', fullLocation: '', guests: 0 });
+    const [location, setLocation] = useState('');
+    const [guests, setGuests] = useState(0);
+    const [showModals, setShowModals] = useState(false);
+    const [showLocationOptions, setShowLocationOptions] = useState(false);
+    const [showGuestOptions, setShowGuestOptions] = useState(false);
+    const [hasSearched, setHasSearched] = useState(false); 
 
     async function getData() {
         const rs = await fetch('stays.json');
@@ -22,20 +29,50 @@ export const useData = () => {
         }));
         
         setData(filterData)
-        setCharacter(filterData);
+        setFilteredData(filterData);
       }
       useEffect(() => {
         getData()
       }, [])
     
-      function search_character() {
-        const filtered = character.filter((item) =>
-          item.name.toLowerCase().includes(search.name.toLowerCase())
+      function handleSearch() {
+        setHasSearched(true);  
+        const city = search.city.split(',')[0].trim(); 
+        const guestNumber = parseInt(search.guests, 10);
+        const results = data.filter(char => 
+          char.city.toLowerCase().includes(city.toLowerCase()) &&
+          char.maxGuests >= guestNumber
         );
-        setData(filtered);
+        setFilterData(results);
+        setShowModals(false);
+      }
+    
+      function reset() {
+        setFilterData(data);
+        setSearch({ city: '', fullLocation: '', guests: 0 });
+        setLocation('');
+        setGuests(0);
+        setShowLocationOptions(false);
+        setShowGuestOptions(false);
+        setHasSearched(false); 
       }
 
-  return { data, search, search_character }
+
+  return {
+     data,
+     search,
+     setSearch,
+     setLocation,
+     setGuests,
+     handleSearch,
+     setFilterData, //setFilteredData
+     setShowModals,
+     showLocationOptions,
+     showGuestOptions,
+     setShowLocationOptions,
+     setShowGuestOptions,
+     reset, //resetfilters
+    }
 }
 
 

@@ -6,16 +6,28 @@ import { useData } from "./hook/useData";
 
 
 function App() {
-const {data, setSearch, search} = useData()
-
+const {
+  data,
+  search,
+  setSearch,
+  setLocation,
+  setGuests,
+  handleSearch,
+  setFilteredData,
+  setShowModals,
+  showLocationOptions,
+  showGuestOptions,
+  setShowLocationOptions,
+  setShowGuestOptions,
+  resetFilter} = useData()
 
   return (
     <>
     <Nav search={{search, setSearch}}/> 
-    
+
     <CardList>
       {data && data.map(item => (<Card key={item.title} item={item}/>))}
-   </CardList>
+    </CardList>
     </>
   )
 }

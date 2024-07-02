@@ -18,13 +18,13 @@ export const Search = ({ search, setSearch }) => {
         />
 
         <input
-          className='gest'
+          className='guest'
           id="guest"
           type="text"
           placeholder="Add Guests"
           value={search.guests > 0 ? `${search.guests} guests` : ''}
           // onClick={handleGuestsInputclic}
-          readOnly
+          // readOnly
           />
 
         <button>
