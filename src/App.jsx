@@ -10,16 +10,17 @@ const {
   data,
   search,
   setSearch,
-  setLocation,
-  setGuests,
-  handleSearch,
-  setFilteredData,
-  setShowModals,
-  showLocationOptions,
-  showGuestOptions,
-  setShowLocationOptions,
-  setShowGuestOptions,
-  resetFilter} = useData()
+  // setLocation,
+  // setGuests,
+  // handleSearch,
+  // setFilteredData,
+  // setShowModals,
+  // showLocationOptions,
+  // showGuestOptions,
+  // setShowLocationOptions,
+  // setShowGuestOptions,
+  // resetFilter
+  } = useData()
 
   return (
     <>

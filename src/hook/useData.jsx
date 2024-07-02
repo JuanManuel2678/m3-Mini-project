@@ -29,7 +29,7 @@ export const useData = () => {
         }));
         
         setData(filterData)
-        setFilteredData(filterData);
+        setFilterData(filterData);
       }
       useEffect(() => {
         getData()
@@ -61,17 +61,17 @@ export const useData = () => {
   return {
      data,
      search,
-     setSearch,
-     setLocation,
-     setGuests,
-     handleSearch,
-     setFilterData, //setFilteredData
-     setShowModals,
-     showLocationOptions,
-     showGuestOptions,
-     setShowLocationOptions,
-     setShowGuestOptions,
-     reset, //resetfilters
+     setSearch
+    //  setLocation,
+    //  setGuests,
+    //  handleSearch,
+    //  setFilterData, //setFilteredData
+    //  setShowModals,
+    //  showLocationOptions,
+    //  showGuestOptions,
+    //  setShowLocationOptions,
+    //  setShowGuestOptions,
+    //  reset, //resetfilters
     }
 }
 
