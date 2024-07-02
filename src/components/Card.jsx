@@ -1,7 +1,7 @@
 import React from 'react'
 import start from '/image/icon-star.svg'
 
-export default function Card ({item: {city, country, superHost, title, rating, maxGuests, type, beds, image}}) {
+export default function Card ({item: { superHost, title, rating, type, beds, image}}) {
     return (
     <li className='Card'>
 
@@ -10,9 +10,9 @@ export default function Card ({item: {city, country, superHost, title, rating, m
       </figure>
 
       <div className="data_container">
-        <h2>{superHost}</h2>
-        <h5 className='h5-1'>{type} . {beds}  beds</h5>
-       <div className=''>
+        {superHost && <span >SUPER HOST</span >}
+        <h5 className='h5-1'>{type} {beds !== null && `. ${beds} beds`}</h5>
+       <div className='rating'>
        <h5 className='h5-2'>
         <img src={start} alt="icon estrella "/> {rating}
         </h5>
