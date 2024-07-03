@@ -1,6 +1,7 @@
 import searchLogo from '/public/image/search.svg'
 
-export const Search = ({ search, setSearch }) => {
+export const Search = ({ search, setSearch, handleSearch }) => {
+
 
 
   return (
@@ -12,22 +13,21 @@ export const Search = ({ search, setSearch }) => {
           id="location"
           type="text"
           placeholder="Add location"
-          value={search.fullLocation}
-          // onClick={hanleLocationInputClick}
-          onChange={(e) => setSearch({ ...search, fullLocation: e.target.value })}
+          value={search.city}
+          onChange={(e) => setSearch({ ...search, city: e.target.value })}
         />
 
         <input
           className='guest'
           id="guest"
-          type="text"
+          type="number"
+          min="1"
+          max="10"
           placeholder="Add Guests"
-          value={search.guests > 0 ? `${search.guests} guests` : ''}
-          // onClick={handleGuestsInputclic}
-          // readOnly
+          value={search.guest}
           />
 
-        <button>
+        <button onClick={handleSearch}>
           <img src={searchLogo} alt="icono lupa " />
         </button>
 

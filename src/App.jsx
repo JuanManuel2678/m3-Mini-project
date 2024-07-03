@@ -1,7 +1,6 @@
 import { Nav } from "./components/Nav";
 import CardList from "./components/CardList";
 import Card from "./components/Card";
-
 import { useData } from "./hook/useData";
 
 
@@ -10,26 +9,21 @@ const {
   data,
   search,
   setSearch,
-  // setLocation,
-  // setGuests,
-  // handleSearch,
-  // setFilteredData,
-  // setShowModals,
-  // showLocationOptions,
-  // showGuestOptions,
-  // setShowLocationOptions,
-  // setShowGuestOptions,
-  // resetFilter
+  handleSearch,
+  filterData
+
   } = useData()
 
   return (
     <>
-    <Nav search={{search, setSearch}}/> 
+    <Nav search={search} setSearch={setSearch} handleSearch={handleSearch}/> 
 
-    <CardList>
-      {data && data.map(item => (<Card key={item.title} item={item}/>))}
+    <CardList data={data} >
+      {filterData && filterData.map(item => (<Card key={item.title} item={item}/>))}
     </CardList>
-    </>
+
+
+    </> 
   )
 }
 export default App
