@@ -68,7 +68,6 @@ outline: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .Card {
@@ -112,9 +111,11 @@ outline: none;
 }
 
 .h5-2 {
+  display: flex;
+  place-items: center;
+  gap: 2px;
   font-size: 14px;
   color: #4f4f4f;
-  align-items: center;
 }
 
 .data_container .h5-2 img {
@@ -132,4 +133,113 @@ outline: none;
 .Main .main_h2 {
   font-weight: bolder;
   margin: 15px;
+}
+
+.full_modal {
+  border: 2px solid grey;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+}
+
+.modal {
+  border: 2px solid black;
+  background-color: #ffffff;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0 0 10px rgba(254, 254, 254, 0.9);
+  height: 460px;
+  width: 100%;
+  position: fixed;
+  /* display: flex; */
+  justify-content: space-between;
+  padding: 30px;
+  top: 0;
+}
+
+.modal_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  border-radius: 16px;
+}
+
+.modal_container_location {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.modal_container_location:hover {
+  border: 2px solid black;
+}
+
+.modal_container_guest {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.modal_container_guest:hover {
+  border: 2px solid black;
+}
+.modal_container_button {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.modal_container_button button {
+  width: 127px;
+  height: 48px;
+  border-radius: 16px;
+  background-color: #EB5757;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  border: white;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.modal_container_button button:hover {
+  color: black;
+}
+
+.modal_container_button img {
+  width: 17.6px;
+  height: 17.6px;
+}
+.modal_container span {
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.modal_container input {
+  height: 30px;
+  border-radius: 6px;
+  outline: none;
+  border: white;
 }

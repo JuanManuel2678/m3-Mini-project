@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 
 export const useData = () => {
     const [data, setData] = useState([])
+    const [showModal, setShowModal] = useState(false)
     const [filterData, setFilterData] = useState([]);
     const [search, setSearch] = useState({ city: ''});
+    
 
     async function getData() {
         const rs = await fetch('stays.json');
@@ -43,7 +45,9 @@ export const useData = () => {
      search,
      setSearch,
      handleSearch,
-     filterData
+     filterData,
+     showModal,
+     setShowModal
     }
 }
 

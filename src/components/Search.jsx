@@ -1,6 +1,6 @@
 import searchLogo from '/public/image/search.svg'
 
-export const Search = ({ search, setSearch, handleSearch }) => {
+export const Search = ({ search, setSearch, handleSearch,setShowModal }) => {
 
 
 
@@ -14,6 +14,7 @@ export const Search = ({ search, setSearch, handleSearch }) => {
           type="text"
           placeholder="Add location"
           value={search.city}
+          onClick={() => setShowModal(true)}
           onChange={(e) => setSearch({ ...search, city: e.target.value })}
         />
 
@@ -25,6 +26,7 @@ export const Search = ({ search, setSearch, handleSearch }) => {
           max="10"
           placeholder="Add Guests"
           value={search.guest}
+          onClick={() => setShowModal(true)}
           />
 
         <button onClick={handleSearch}>
