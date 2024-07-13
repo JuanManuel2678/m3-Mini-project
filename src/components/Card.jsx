@@ -2,12 +2,12 @@ import React from "react";
 import start from "/image/icon-star.svg";
 
 export default function Card({
-  item: { superHost, title, rating, type, beds, image, city },
+  item: { superHost, title, rating, type, beds,photo, city },
 }) {
   return (
     <li className="Card">
       <figure className="img_container">
-        <img src={image} alt="Character img" height="200" />
+        <img src={photo} alt="Character img" height="200" />
       </figure>
 
       <div className="data_container">

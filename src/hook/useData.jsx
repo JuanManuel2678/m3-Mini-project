@@ -3,11 +3,10 @@ import { useEffect, useState } from "react";
 
 export const useData = () => {
     const [data, setData] = useState([])
-    const [showModal, setShowModal] = useState(false)
-    const [filterData, setFilterData] = useState([]);
-    const [search, setSearch] = useState({ city: ''});
+    const [search, setSearch] = useState([]);
     
-
+    const [showModal, setShowModal] = useState(false)
+    
     async function getData() {
         const rs = await fetch('stays.json');
         const rsJson = await rs.json()
@@ -21,31 +20,21 @@ export const useData = () => {
         maxGuests: item?.maxGuests,
         type: item?.type,
         beds: item?.beds,
-        image: item?.photo
+        photo: item?.photo
         }));
         
-        setData(filteredData)
-        setFilterData(filteredData);
+        setData(rsJson)
+        setSearch(rsJson);
       }
       useEffect(() => {
         getData()
       }, [])
     
-      function handleSearch() {
-        const results = data.filter(item => 
-          item.city.toLowerCase().includes(city.toLowerCase()) 
-        );
-        setFilterData(results);
-      }
-  
-
 
   return {
      data,
      search,
      setSearch,
-     handleSearch,
-     filterData,
      showModal,
      setShowModal
     }

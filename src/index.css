@@ -187,6 +187,7 @@ outline: none;
 }
 
 .modal_container_guest {
+  border: 2px solid red;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -242,4 +243,11 @@ outline: none;
   border-radius: 6px;
   outline: none;
   border: white;
+}
+
+.guest_container {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

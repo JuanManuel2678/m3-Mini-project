@@ -1,5 +1,20 @@
+import { useState } from 'react';
 import lupa from '/public/image/lupa.svg'
-export const Modal = ({ setShowModal }) => {
+
+
+
+export const Modal = ({ setShowModal, data, setSearch }) => {
+  const [searchValue, setSearchValue] = useState('')
+  const [countAdult, setCountAdult] = useState(0)
+  const [countChild, setCountChild] = useState(0)
+
+  const searchLocation = () => {
+    const  rs = data.filter((item) => item.city.toLowerCase().includes(searchValue.toLowerCase())
+  )
+    setSearch(rs)
+    setShowModal(false)
+  }
+
   return (
     <header className="full_modal">
       <div className="modal">
@@ -8,10 +23,10 @@ export const Modal = ({ setShowModal }) => {
                 <span>LOCATION</span>
                 <input
             className=""
-            id="location"
             type="text"
             placeholder="Add location"
-            value=''
+            value={data.ciy}
+            onChange={(e) => setSearchValue(e.target.value)}
           />
             </div>
 
@@ -19,15 +34,34 @@ export const Modal = ({ setShowModal }) => {
             <span>GUESTS</span>
             <input
             className=""
-            id="guest"
-            type="text"
+            type="number"
             placeholder="Add Guests"
-            value=''
           />
+          <div className='guest_container'>
+              <div className=''>
+                <span >Adults</span>
+                <span >Ages 13 or above</span>
+                <div>
+                  <button onClick={() => setCountAdult(countAdult - 1 ? 0 : 0)}>-</button>
+                  <span >{countAdult}</span>
+                  <button onClick={() => setCountAdult(countAdult + 1)} >+</button>
+                </div>
+              </div>
+              <div >
+                <span >Children</span>
+                <span >Ages 2-12</span>
+                <div>
+                  <button onClick={() => setCountChild(countChild - 1 ? 0 : 0)}>-</button>
+                  <span >{countChild}</span>
+                  <button onClick={() => setCountChild(countChild + 1)}>+</button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="modal_container_button">
-             <button  onClick={() => setShowModal(false)}>
+             <button  
+             onClick={searchLocation}>
                 <img src={lupa} alt="icono lupa " /> Search
              </button>
         </div>

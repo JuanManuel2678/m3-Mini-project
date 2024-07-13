@@ -1,13 +1,13 @@
 import { Search } from './Search'
 import logo from '/image/logo.svg'
 
-export const Nav = ({search, setSearch, handleSearch, setShowModal}) => {
+export const Nav = ({setShowModal}) => {
   return (
     <nav className="NavBar">
         <figure>
             <img src={logo} alt="logo marca" />
         </figure>
-        <Search  search={search} setSearch={setSearch} handleSearch={handleSearch} setShowModal={setShowModal}/>
+        <Search setShowModal={setShowModal}/>
     </nav>
   )
 }

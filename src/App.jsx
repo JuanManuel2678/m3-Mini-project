@@ -8,10 +8,8 @@ import { Modal } from "./components/Modal";
 function App() {
 const {
   data,
-  search,
   setSearch,
-  handleSearch,
-  filterData,
+  search,
   showModal,
   setShowModal
 
@@ -19,12 +17,12 @@ const {
 
   return (
     <>
-    <Nav search={search} setSearch={setSearch} handleSearch={handleSearch} setShowModal={setShowModal}/> 
+    <Nav setShowModal={setShowModal} setSearch={setSearch}/> 
 
-    {showModal && (<Modal setShowModal={setShowModal}/>)}
+    {showModal && (<Modal setSearch={setSearch} data={data} setShowModal={setShowModal}/>)}
 
-    <CardList data={data} >
-      {filterData && filterData.map(item => (<Card key={item.title} item={item}/>))}
+    <CardList search={search} >
+      {search && search.map(item => (<Card key={item.title} item={item}/>))}
     </CardList>
 
 
