@@ -38,19 +38,19 @@ export const Modal = ({ setShowModal, data, setSearch }) => {
             placeholder="Add Guests"
           />
           <div className='guest_container'>
-              <div className=''>
+              <div className='guest_container_div'>
                 <span >Adults</span>
                 <span >Ages 13 or above</span>
-                <div>
+                <div class="gest_butom">
                   <button onClick={() => setCountAdult(countAdult - 1 ? 0 : 0)}>-</button>
                   <span >{countAdult}</span>
                   <button onClick={() => setCountAdult(countAdult + 1)} >+</button>
                 </div>
               </div>
-              <div >
+              <div  className='guest_container_div'>
                 <span >Children</span>
                 <span >Ages 2-12</span>
-                <div>
+                <div class="gest_butom">
                   <button onClick={() => setCountChild(countChild - 1 ? 0 : 0)}>-</button>
                   <span >{countChild}</span>
                   <button onClick={() => setCountChild(countChild + 1)}>+</button>
